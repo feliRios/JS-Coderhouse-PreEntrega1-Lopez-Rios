@@ -7,11 +7,13 @@ let total = 0.0;
 let menuDecision;  // Variable para el ciclo do-while
 
 function agregarItemCarrito(precio, cantidad) {
+    // Esta funcion agrega "items" al carrito, incluyendo precio y cantidad
     console.log("El usuario agrega " + cantidad + " productos de $" + precio);
     total += precio * cantidad;
 }
 
 function vaciarCarrito() {
+    // Esta funcion vacía el carrito
     let vaciarDecision = prompt("Estas seguro que deseas vaciar el carrito? (si/no): ");
     if (vaciarDecision == "si") {
         total = 0;
@@ -23,10 +25,13 @@ function vaciarCarrito() {
 }
 
 function mostrarCarrito() {
+    // Esta funcion muestra el contenido actual del carrito (precio total)
     alert("El total del carrito es de $" + total);
 }
 
 function calcularCuotas() {
+    // Esta funcion permite calcular el valor total del carrito en caso de que
+    // el usuario precise un pago en cuotas (en este caso con interes)
     // 6 cuotas -> 15% interes
     // 12 cuotas -> 20% interes
     // 18 cuotas -> 22% interes
@@ -59,6 +64,7 @@ function calcularCuotas() {
 }
 
 do {
+    // La logica del menu
     menuDecision = prompt("Elija alguna de las siguientes opciones:\n (1) Agregar productos al carrito\n (2) Mostrar el carrito\n (3) Calcular carrito en cuotas\n (4) Vaciar el carrito\n (5) Finalizar el programa");
     switch (menuDecision) {
         case '1':
